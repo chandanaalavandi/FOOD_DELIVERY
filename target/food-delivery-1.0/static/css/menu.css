@@ -1,0 +1,211 @@
+/* Menu Page */
+.restaurant-header {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, white 0%, #fafafa 100%);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .restaurant-header {
+    background: linear-gradient(135deg, #2d2d2d 0%, #252525 100%);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.restaurant-header img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.restaurant-header:hover img {
+    transform: scale(1.05);
+}
+
+.restaurant-details h1 {
+    color: #FF6B35;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.restaurant-details p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+body.dark-mode .restaurant-details p {
+    color: #aaa;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+body.dark-mode .menu-card {
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.menu-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Innovative micro-interactions */
+.menu-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,107,53,0.02) 60%);
+    pointer-events: none;
+    transition: opacity 0.45s;
+    opacity: 0;
+    border-radius: 1.25rem;
+}
+
+.menu-card:hover::after { opacity: 1; }
+
+.menu-badge {
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    background: rgba(255,255,255,0.9);
+    color: var(--primary-color);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transform: translateY(-6px);
+    transition: transform 0.35s cubic-bezier(0.2,1,0.22,1);
+}
+
+.menu-card:hover .menu-badge { transform: translateY(-2px); }
+
+.menu-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover img {
+    transform: scale(1.1);
+}
+
+.menu-info {
+    padding: 1.5rem;
+}
+
+.menu-info h3 {
+    margin-bottom: 0.75rem;
+    color: #FF6B35;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.menu-info p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+body.dark-mode .menu-info p {
+    color: #aaa;
+}
+
+.menu-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    gap: 1rem;
+}
+
+.menu-footer .price {
+    font-weight: 700;
+    color: #FF6B35;
+    font-size: 1.25rem;
+    background: rgba(255, 107, 53, 0.08);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+body.dark-mode .menu-footer .price {
+    background: rgba(255, 107, 53, 0.15);
+}
+
+.menu-footer .rating {
+    color: #F7931E;
+    font-weight: 600;
+    background: rgba(247, 147, 30, 0.08);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+}
+
+/* Staggered entrance for menu cards */
+.menu-card { opacity: 0; transform: translateY(18px) scale(0.995); }
+.menu-card.visible { opacity: 1; transform: translateY(0) scale(1); transition: opacity 0.55s cubic-bezier(0.2,1,0.22,1), transform 0.55s cubic-bezier(0.2,1,0.22,1); }
+
+body.dark-mode .menu-footer .rating {
+    background: rgba(247, 147, 30, 0.15);
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    animation: none;
+    font-weight: 600;
+}
+
+.add-to-cart-btn:active {
+    animation: addToCartPulse 0.6s ease-out;
+}
+
+@keyframes addToCartPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .restaurant-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .restaurant-header img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}

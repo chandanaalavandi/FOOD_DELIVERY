@@ -1,0 +1,115 @@
+/* Order History Page */
+.orders-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.order-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .order-card {
+    background-color: #333;
+}
+
+.order-card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+	transform: translateY(-2px);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+body.dark-mode .order-header {
+    border-bottom-color: #555;
+}
+
+.order-header h3 {
+    color: var(--primary-color);
+}
+
+.order-status {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    background-color: #f0f0f0;
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+body.dark-mode .order-status {
+    background-color: #555;
+    color: #aaa;
+}
+
+.order-status.completed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.order-status.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.order-status.cancelled {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.order-details p {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+body.dark-mode .order-details p {
+    color: #aaa;
+}
+
+.order-details strong {
+    color: var(--text-color);
+}
+
+body.dark-mode .order-details strong {
+    color: #fff;
+}
+
+.no-orders {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .no-orders {
+    background-color: #333;
+}
+
+.no-orders p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+body.dark-mode .no-orders p {
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+    .orders-list {
+        grid-template-columns: 1fr;
+    }
+}

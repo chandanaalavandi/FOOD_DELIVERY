@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    
+    <display-name>Food Delivery Application</display-name>
+    <description>Complete Food Delivery Web Application</description>
+    
+    <!-- Signup Servlet -->
+    <servlet>
+        <servlet-name>SignupServlet</servlet-name>
+        <servlet-class>com.delivery.servlet.SignupServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignupServlet</servlet-name>
+        <url-pattern>/servlet/signup</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Signin Servlet -->
+    <servlet>
+        <servlet-name>SigninServlet</servlet-name>
+        <servlet-class>com.delivery.servlet.SigninServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SigninServlet</servlet-name>
+        <url-pattern>/servlet/signin</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Logout Servlet -->
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.delivery.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/servlet/logout</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Restaurant Servlet -->
+    <servlet>
+        <servlet-name>RestaurantServlet</servlet-name>
+        <servlet-class>com.delivery.servlet.RestaurantServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RestaurantServlet</servlet-name>
+        <url-pattern>/servlet/RestaurantServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Menu Servlet -->
+    <servlet>
+        <servlet-name>MenuServlet</servlet-name>
+        <servlet-class>com.delivery.servlet.MenuServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MenuServlet</servlet-name>
+        <url-pattern>/servlet/menu</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Cart Servlet -->
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>com.delivery.servlet.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/servlet/cart</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Checkout Servlet -->
+    <servlet>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <servlet-class>com.delivery.servlet.CheckoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <url-pattern>/servlet/checkout</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Success Servlet -->
+    <servlet>
+        <servlet-name>SuccessServlet</servlet-name>
+        <servlet-class>com.delivery.servlet.SuccessServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SuccessServlet</servlet-name>
+        <url-pattern>/servlet/success</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Order History Servlet -->
+    <servlet>
+        <servlet-name>OrderHistoryServlet</servlet-name>
+        <servlet-class>com.delivery.servlet.OrderHistoryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderHistoryServlet</servlet-name>
+        <url-pattern>/servlet/orderhistory</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Profile Servlet -->
+    <servlet>
+        <servlet-name>ProfileServlet</servlet-name>
+        <servlet-class>com.delivery.servlet.ProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProfileServlet</servlet-name>
+        <url-pattern>/servlet/profile</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Session Configuration -->
+    <session-config>
+        <cookie-config>
+            <secure>false</secure>
+            <http-only>true</http-only>
+        </cookie-config>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+    
+</web-app>
