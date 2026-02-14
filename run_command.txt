@@ -1,15 +1,16 @@
 Open PowerShell and run these in order:
 
 Start MySQL (if not running):
- net start MySQL80
+                  net start MySQL80
 Start Tomcat:
- $env:CATALINA_HOME = 'C:\tomcat9'; & 'C:\tomcat9\bin\startup.bat'
-Wait 10 seconds, then open browser:
-http://localhost:9000/food-delivery/
+                 $env:CATALINA_HOME = 'C:\tomcat9'; & 'C:\tomcat9\bin\startup.bat'
+then open browser:
+                 http://localhost:9000/food-delivery/
+
 
 To Stop Everything
 # Stop Tomcat
-$env:CATALINA_HOME = 'C:\tomcat9'; & 'C:\tomcat9\bin\shutdown.bat'
+                $env:CATALINA_HOME = 'C:\tomcat9'; & 'C:\tomcat9\bin\shutdown.bat'
 
 # Stop MySQL
-net stop MySQL80
+                net stop MySQL80
